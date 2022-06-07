@@ -1,0 +1,17 @@
+version: "3"
+services:
+  backend:
+    build: ./issue-tracker-api
+    image: issue_tracker_backend
+    container_name: "backend"
+    ports:
+      - "8080:8080"
+
+  frontend:
+    build: ./issue-tracer-ui
+    image: issue-tracer-ui_frontend
+    container_name: "frontend"
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend

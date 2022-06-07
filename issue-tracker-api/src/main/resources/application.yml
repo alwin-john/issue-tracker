@@ -1,0 +1,23 @@
+server:
+  port: 8080
+  servlet:
+    contextPath: /penguine
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:issuetracker
+    username: sa
+    password: password
+    driverClassName: org.h2.Driver
+    initialize: true
+
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      id:
+        new_generator_mappings: false
+      ddl-auto: none
+  h2:
+    console:
+      enabled: true
+      path: /h2
